@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== "production") {
 //IMPORTS
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const flash = require("express-flash");
@@ -14,7 +14,7 @@ const session = require("express-session");
 const methodOverride = require("method-override");
 
 //LISTEN ON PORT
-app.listen(PORT);
+app.listen(port);
 
 const initializePassport = require("./passport-config");
 initializePassport(
@@ -47,7 +47,7 @@ app.use(methodOverride("_method"));
 const users = [];
 
 //ROUTES
-app.get("/index.ejs", checkAuthenticated, (req, res) => {
+app.get("/", checkAuthenticated, (req, res) => {
   res.render("index.ejs", { name: req.user.name });
 });
 
@@ -114,4 +114,4 @@ function checkNotAuthenticated(req, res, next) {
 
 
 
-console.log("listening on port", PORT);
+console.log("listening on port", port);

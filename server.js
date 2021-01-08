@@ -47,8 +47,8 @@ app.use(methodOverride("_method"));
 const users = [];
 
 //ROUTES
-app.get("/", checkAuthenticated, (req, res) => {
-  res.render("index.ejs", { name: req.user.name });
+app.get("./views/index.ejs", checkAuthenticated, (req, res) => {
+  res.render("./views/index.ejs", { name: req.user.name });
 });
 
 //register route

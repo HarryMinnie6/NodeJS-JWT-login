@@ -47,7 +47,7 @@ app.use(methodOverride("_method"));
 const users = [];
 
 //ROUTES
-app.get("/", checkAuthenticated, (req, res) => {
+app.get("/index.ejs", checkAuthenticated, (req, res) => {
   res.render("index.ejs", { name: req.user.name });
 });
 

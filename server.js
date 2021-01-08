@@ -45,7 +45,7 @@ const users = [];
 
 //ROUTES
 app.get("/", checkAuthenticated, (req, res) => {
-  res.render("./views/index.ejs", { name: req.user.name });
+  res.render("index.ejs", { name: req.user.name });
 });
 
 //register route

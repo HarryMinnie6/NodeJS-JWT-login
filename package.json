@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "index.ejs",
     "devStart": "nodemon server.js"
   },
   "author": "harry minnie",

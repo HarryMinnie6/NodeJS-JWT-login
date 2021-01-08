@@ -23,10 +23,9 @@ initializePassport(
   (id) => users.find((user) => user.id === id)
 );
 
-
 app.set("view-engine", "ejs");
-app.use(express.static('styles'));
-app.use('/styles', express.static(__dirname + '/style'))
+app.use(express.static("styles"));
+app.use("/styles", express.static(__dirname + "/style"));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(flash());
@@ -41,13 +40,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride("_method"));
 
-
-
 //
 const users = [];
 
 //ROUTES
-app.get("./views/index.ejs", checkAuthenticated, (req, res) => {
+app.get("/", checkAuthenticated, (req, res) => {
   res.render("./views/index.ejs", { name: req.user.name });
 });
 
@@ -111,7 +108,5 @@ function checkNotAuthenticated(req, res, next) {
   }
   next();
 }
-
-
 
 console.log("listening on port", port);

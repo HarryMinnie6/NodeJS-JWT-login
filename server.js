@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(flash());
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
+    secret: process.env.SESSION_SECRET,                                           // 'secretidhere',
     resave: false,
     saveUninitialized: false,
   })
